@@ -17,7 +17,7 @@ var questions = [
             c: 'Teresa May'
         },
         correctAnswer: 'b'
-    }
+    },
     {
         question: "Name the famous Chocolate Brand",
         answers: {
@@ -26,7 +26,7 @@ var questions = [
             c: 'CadBars'
         },
         correctAnswer: 'a'
-    }
+    },
     {
         question: "What is a common household pet",
         answers: {
@@ -106,6 +106,6 @@ function showResults(questions, tableContainer, scoreContainer) {
 showQuestions(questions, tableContainer);
 
 //show right and wrong answers upon submitting
-submitButton.onClick = function() {
+goButton.onClick = function() {
     showResults(questions, tableContainer, scoreContainer);
 }
