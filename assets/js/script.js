@@ -69,5 +69,5 @@ function generateTable(questions, tableContainer) {
             + '<div class="answers">'+ answers.join('') + '</div>'
         );
     }
-
+    tableContainer.innerHTML = output.join('');
 }
