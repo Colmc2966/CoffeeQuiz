@@ -44,9 +44,11 @@ var goButton = document.getElementById('go');
 
 generateTable(questions, tableContainer, scoreContainer, goButton);
 
+function generateTable(questions, tableContainer, scoreContainer, goButton)
+
 //generating quiz
 
-function generateTable(questions, tableContainer) {
+function showQuestions(questions, tableContainer) {
 //For output of quiz
     var output = [];
     var answers;
