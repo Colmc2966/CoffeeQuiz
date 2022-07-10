@@ -44,7 +44,8 @@ var goButton = document.getElementById('go');
 
 generateTable(questions, tableContainer, scoreContainer, goButton);
 
-function generateTable(questions, tableContainer, scoreContainer, goButton)
+function generateTable(questions, tableContainer, scoreContainer, goButton){
+
 
 //generating quiz
 
@@ -110,4 +111,5 @@ showQuestions(questions, tableContainer);
 //show right and wrong answers upon submitting
 goButton.onClick = function() {
     showResults(questions, tableContainer, scoreContainer);
+}
 }
