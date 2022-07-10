@@ -64,10 +64,48 @@ function generateTable(questions, tableContainer) {
                 + '</label>'
               );
         }
+        // adds questions and answers to output
         output.push(
             '<div class="question">' + questions[i].question + '</div>'
             + '<div class="answers">'+ answers.join('') + '</div>'
         );
     }
+    //combining into one string to put onto page
     tableContainer.innerHTML = output.join('');
+}
+
+function showResults(questions, tableContainer, scoreContainer) {
+    // for gathering answers
+    var answerContainers = tableContainer.querySelectorAll('.answers');
+    //for keeping track of answers
+    var playerAnswer = '';
+    var numCorrect = 0;
+
+    for(var i=0; i<questions.length; i++){
+        //to find answer
+        playerAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||
+    {}).value;
+
+    // answer is right
+    if(playeranswer===questions[i].correctAnswer){
+        // +1 to number of right answers
+        numCorrect++;
+
+        //adds a green color to right answers
+        answerContainers[i].style.color = 'green';
+    }
+    //adds a red color if wrong answer
+    else {
+        answerContainers[i].style.color = 'red';
+    }
+    }
+    //compares right answers from total amount of questions
+    scoreContainer.innerHTML = numCorrect + 'out of' + questions.length;
+}
+// show questions as page loads
+showQuestions(questions, tableContainer);
+
+//show right and wrong answers upon submitting
+submitButton.onClick = function() {
+    showResults(questions, tableContainer, scoreContainer);
 }
