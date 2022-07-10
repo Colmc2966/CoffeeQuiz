@@ -1,5 +1,5 @@
 // code for questions and answers
-var questions = [
+var myQuestions = [
     {
         question: "What is the capital of Ireland?",
         answers: {
@@ -37,79 +37,92 @@ var questions = [
         correctAnswer: 'b'
     }
 ];
-//link between html & script
+
 var tableContainer = document.getElementById('table');
 var scoreContainer = document.getElementById('score');
 var goButton = document.getElementById('go');
 
-generateTable(questions, tableContainer, scoreContainer, goButton);
+generateQuiz(myQuestions, tableContainer, scoreContainer, goButton);
 
-function generateTable(questions, tableContainer, scoreContainer, goButton){
+function generateQuiz(questions, tableContainer, scoreContainer, goButton){
 
-
-//generating quiz
-
-function showQuestions(questions, tableContainer) {
-//For output of quiz
+  function showQuestions(questions, tableContainer){
+    // place for answer
     var output = [];
     var answers;
-    for (var i=0; i<questions.length;i++) {
-        //So answer starts as blank by default
-        answers = [];
-        //Link to correct answer
-        for(letter in questions[i].answers) {
-            // radio button to select answers
-            answers.push(
-                '<label>'
-                  + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-                  + letter + ': '
-                  + questions[i].answers[letter]
-                + '</label>'
-              );
-        }
-        // adds questions and answers to output
-        output.push(
-            '<div class="question">' + questions[i].question + '</div>'
-            + '<div class="answers">'+ answers.join('') + '</div>'
-        );
-    }
-    //combining into one string to put onto page
-    tableContainer.innerHTML = output.join('');
-}
 
-function showResults(questions, tableContainer, scoreContainer) {
-    // for gathering answers
-    var answerContainers = tableContainer.querySelectorAll('.answers');
-    //for keeping track of answers
-    var playerAnswer = '';
-    var numCorrect = 0;
-
+    // to show every question
     for(var i=0; i<questions.length; i++){
-        //to find answer
-        playerAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||
-    {}).value;
+      
+      // resets answers
+      answers = [];
 
-    // answer is right
-    if(playeranswer===questions[i].correctAnswer){
-        // +1 to number of right answers
+      // to accomadate for all answers
+      for(letter in questions[i].answers){
+
+        // adds interactable answer input
+        answers.push(
+          '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + letter + ': '
+            + questions[i].answers[letter]
+          + '</label>'
+        );
+      }
+
+      // pushes question and answer
+      output.push(
+        '<div class="question">' + questions[i].question + '</div>'
+        + '<div class="answers">' + answers.join('') + '</div>'
+      );
+    }
+
+    // combines strings into one to use
+    tableContainer.innerHTML = output.join('');
+  }
+
+
+  function showResults(questions, tableContainer, scoreContainer){
+    
+    // gathers answers
+    var answerContainers = tableContainer.querySelectorAll('.answers');
+    
+    // keeps track of answers
+    var userAnswer = '';
+    var numCorrect = 0;
+    
+    // for all questions
+    for(var i=0; i<questions.length; i++){
+
+      // find users answer
+      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+      
+      // if user is right
+      if(userAnswer===questions[i].correctAnswer){
+        // +1 to tally
         numCorrect++;
-
-        //adds a green color to right answers
+        
+        // change to green
         answerContainers[i].style.color = 'green';
-    }
-    //adds a red color if wrong answer
-    else {
+      }
+      // if wrong answer
+      else{
+        // change to red
         answerContainers[i].style.color = 'red';
+      }
     }
-    }
-    //compares right answers from total amount of questions
-    scoreContainer.innerHTML = numCorrect + 'out of' + questions.length;
-}
-// show questions as page loads
-showQuestions(questions, tableContainer);
 
-//show right and wrong answers upon submitting
-goButton.onClick = function() {
+    // compare right to all answers
+    scoreContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+  }
+
+  // show questions upon loading page
+  showQuestions(questions, tableContainer);
+  
+  // shows results when clicked
+  goButton.onclick = function(){
     showResults(questions, tableContainer, scoreContainer);
+  }
+
 }
-}
+
