@@ -1,3 +1,4 @@
+// code for questions and answers
 var questions = [
     {
         question: "What is the capital of Ireland?",
@@ -35,4 +36,10 @@ var questions = [
         },
         correctAnswer: 'b'
     }
-]
+];
+
+var tableContainer = document.getElementById('table');
+var scoreContainer = document.getElementById('score');
+var goButton = document.getElementById('go');
+
+generateQuiz(questions, tableContainer, scoreContainer, goButton);
