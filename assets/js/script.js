@@ -89,18 +89,13 @@ function generateQuiz(questions, tableContainer, scoreContainer, goButton){
 
         // adds interactable answer input
         answers.push(
-          '<label>'
-            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-            + letter + ': '
-            + questions[i].answers[letter]
-          + '</label>'
+          '<label>'+ '<input type="radio" name="question'+i+'" value="'+letter+'">' + letter + ': '+ questions[i].answers[letter]+ '</label>'
         );
       }
 
       // pushes question and answer
       output.push(
-        '<div class="question">' + questions[i].question + '</div>'
-        + '<div class="answers">' + answers.join('') + '</div>'
+        '<div class="question">' + questions[i].question + '</div>'+ '<div class="answers">' + answers.join('') + '</div>'
       );
     }
 
@@ -149,7 +144,6 @@ function generateQuiz(questions, tableContainer, scoreContainer, goButton){
   // shows results when clicked
   goButton.onclick = function(){
     showResults(questions, tableContainer, scoreContainer);
-  }
+  };
 
 }
-
