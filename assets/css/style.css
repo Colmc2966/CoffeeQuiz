@@ -7,10 +7,11 @@ body{
 
 #heading{
     background-color: rgb(207, 125, 24);
-	margin: 5% 33%;
 	border-bottom: 4px solid black;
 	text-align: center;
 	padding: 0 5px;
+	width: 40%;
+	margin: 5% 30%;
 }
 
 #line {
@@ -19,6 +20,7 @@ body{
 
 #table {
 	margin: 2.5% 33%;
+	width: 40%;
 }
 .question{
 	font-weight: 600;
@@ -36,7 +38,7 @@ body{
 	padding: 20px;
 	cursor: pointer;
 	margin-bottom: 20px;
-	margin: 0 33%;
+	margin: 0 45%;
 }
 #go:hover{
 	background-color: #3a8;

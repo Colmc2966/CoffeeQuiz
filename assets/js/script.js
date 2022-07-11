@@ -19,23 +19,50 @@ var myQuestions = [
         correctAnswer: 'b'
     },
     {
-        question: "Name the famous Chocolate Brand",
+        question: "Name the famous Chocolate Brand?",
         answers: {
             a: 'Cadburys',
             b: 'Tadburs',
-            c: 'CadBars'
+            c: 'Cadbars'
         },
         correctAnswer: 'a'
     },
     {
-        question: "What is a common household pet",
+        question: "What is a common household pet?",
         answers: {
             a: 'Ostrich',
             b: 'Cat',
             c: 'Giraffe'
         },
         correctAnswer: 'b'
-    }
+    },
+    {
+        question: "What continent is Kenya in?",
+        answers: {
+            a: 'Asia',
+            b: 'Europe',
+            c: 'Africa'
+        },
+        correctAnswer: 'c'
+    },
+    {
+        question: "Where was Elon Musk born?",
+        answers: {
+            a: 'Canada',
+            b: 'USA',
+            c: 'South Africa'
+        },
+        correctAnswer: 'c'
+    },
+    {
+        question: "Which of the following is a commonly used apparatus for making coffee?",
+        answers: {
+            a: 'French press',
+            b: 'Spainish door',
+            c: 'Italian window'
+        },
+        correctAnswer: 'a'
+    },
 ];
 
 var tableContainer = document.getElementById('table');
