@@ -2,7 +2,7 @@
 
 This is a small quiz based too interest users into teesting their general quiz knowledge on no specific topic! Users of this quiz will test themselves on unorthodox questions and answers.
 
-![Responsive Mockup](https://github.com/Colmc2966/Coffee-Classroom/blob/main/media/amiresponsive.jpg)
+![Responsive Mockup](https://github.com/Colmc2966/General-knowledge-quiz/blob/main/media/Accessibility.JPG)
 
 ## Features 
 
@@ -13,20 +13,20 @@ This is a small quiz based too interest users into teesting their general quiz k
  - The quiz has a set of questions which load as soon as the page is entered
 - The answer dials for the quiz are interactabl. Users can click which dial corresponds to the answers they wish to choose
 
-![Quiz](https://github.com/Colmc2966/Coffee-Classroom/blob/main/media/nav.jpg)
+![Quiz](https://github.com/Colmc2966/General-knowledge-quiz/blob/main/media/quiz.JPG)
 
 - __The header__
 
   The header of this website is used to describe to the user what the website is about. 
 
-![Header](https://github.com/Colmc2966/Coffee-Classroom/blob/main/media/Header.jpg)
+![Header](https://github.com/Colmc2966/General-knowledge-quiz/blob/main/media/heading.JPG)
 
 
 - __When answered__
 
 When the user submits their answers, whatever questions they get right/wrong will change color to green and red respectively.
 
-![Submitted](https://github.com/Colmc2966/Coffee-Classroom/blob/main/media/highlights.jpg)
+![Submitted](https://github.com/Colmc2966/General-knowledge-quiz/blob/main/media/After%20submitting.JPG)
 
 ### Features Left to Implement
 
